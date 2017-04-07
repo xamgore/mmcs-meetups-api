@@ -1,0 +1,24 @@
+{
+  "name": "mmcs-meetups-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xamgore/mmcs-meetups-api.git"
+  },
+  "author": "xamgore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xamgore/mmcs-meetups-api/issues"
+  },
+  "homepage": "https://github.com/xamgore/mmcs-meetups-api#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "babel-register": "^6.24.0",
+    "koa": "^2.2.0"
+  }
+}
