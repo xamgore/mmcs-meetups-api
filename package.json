@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --inspect ./index.js",
+    "start": "nodemon --ignore db.json ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,8 +24,11 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
     "babel-register": "^6.24.0",
     "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
     "koa-json": "^2.0.2",
     "koa-logger": "^2.0.1",
-    "koa-rest-router": "^1.0.1"
+    "koa-rest-router": "^1.0.1",
+    "lodash": "^4.17.4",
+    "lowdb": "^0.16.0"
   }
 }

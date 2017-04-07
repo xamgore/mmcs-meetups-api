@@ -1,22 +1,16 @@
 import Koa from 'koa'
 import Json from 'koa-json'
 import Logger from 'koa-logger'
-import Router from 'koa-rest-router'
+import BodyParser from 'koa-bodyparser'
 
 const koa = new Koa()
-
 koa.use(Logger())
+koa.use(BodyParser())
 koa.use(Json({ pretty: false, param: 'pretty', spaces: 2 }))
 
+import api17 from './api/v17'
 
-const api17 = Router({ prefix: '/api/v17' })
-
-api17.resource('events', {
-  index: async (ctx) => {
-      ctx.body = { name: 'CAT', date: '2017-07-01', a: [1,2,3] }
-  }
-})
-
+// run server
 koa.use(api17.middleware())
-console.log('Listening on port 3000')
-koa.listen(3000);
+console.log('Listening on port 3001')
+koa.listen(3001);
