@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --inspect ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,9 +17,15 @@
     "url": "https://github.com/xamgore/mmcs-meetups-api/issues"
   },
   "homepage": "https://github.com/xamgore/mmcs-meetups-api#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
   "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
     "babel-register": "^6.24.0",
-    "koa": "^2.2.0"
+    "koa": "^2.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^2.0.1",
+    "koa-rest-router": "^1.0.1"
   }
 }

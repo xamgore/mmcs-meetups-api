@@ -1,9 +1,12 @@
-require('babel-register') //({ stage: 0 })
-// require('babel/polyfill')
+require('babel-register')({
+    // stage: 0,
+    plugins: [
+        'transform-es2015-modules-commonjs',
+        // 'syntax-async-functions',
+        // 'syntax-async-generators',
+    ]
+})
 
-// require('babel-core/register')({
-//     presets: ["es2015"],
-//     plugins: ["syntax-async-functions", "syntax-async-generators"]
-// })
+// require('babel/polyfill')
 
 require('./app')
