@@ -15,10 +15,6 @@ api.resource('events', {
   },
 
 
-  show: async ctx =>
-    ctx.body = await db.get('events').find({ link: ctx.params.event }).value(),
-
-
   create: async ctx => {
     let count = await db.get('events').find({ link: ctx.request.body.link }).size().value()
     if (count > 0) return ctx.throw(400, 'event with such link already exists')
