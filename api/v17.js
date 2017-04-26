@@ -16,16 +16,20 @@ api.resource('events', {
 
 
   create: async ctx => {
-    let count = await db.get('events').find({ link: ctx.request.body.link }).size().value()
+    let { event, pass } = ctx.request.body
+    if (pass !== process.env.MMCS_API_PASSWORD) return ctx.throw(401, 'wrong password')
+
+    let count = await db.get('events').find({ link: event.link }).size().value()
     if (count > 0) return ctx.throw(400, 'event with such link already exists')
 
-    let fields = _.pick(ctx.request.body, [
+    let fields = _.pick(event, [
       'link', 'theme', 'title', 'date', 'time', 'place', 'annotation', 'text', 'authors', 'attendees' ])
 
     // TODO: generate link by title
     // TODO: validate fields
 
     db.get('events').push(fields).write()
+    ctx.body = ''
   },
 
 
