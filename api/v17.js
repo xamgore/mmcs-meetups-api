@@ -1,5 +1,6 @@
 import Router from 'koa-rest-router'
 import db from '../database'
+import tm from '../telegram'
 import _ from 'lodash'
 
 const api = Router({ prefix: '/api/v17' })
@@ -29,6 +30,10 @@ api.resource('events', {
     // TODO: validate fields
 
     db.get('events').push(fields).write()
+
+    let msg = `*${fields.title}*\n${fields.annotation} [Подробнее](https://meetups.sfedu.ru/${fields.link})`
+    tm.sendMessage(process.env.MMCS_TELEGRAM_CHANNEL, msg, { parse_mode: 'Markdown' })
+
     ctx.body = ''
   },
 
