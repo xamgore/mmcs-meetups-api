@@ -111,3 +111,9 @@ $ curl -X POST -H "Content-Type: application/json" -d '{"link": "cat", "name": "
 
 {"link": "cat", "name": "Category Theory"}
 ```
+
+For windows you can use another form:
+
+```shell
+$ echo '{"example" : 3}' |  sed "s/'\(.*\)'/\1/" | curl -d @- http://127.0.0.1:3001/api/v17/events -X POST -H "Content-Type: application/json"
+```
