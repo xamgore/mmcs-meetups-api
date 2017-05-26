@@ -1,13 +1,8 @@
+require('babel-polyfill')
 require('babel-register')({
-    // stage: 0,
-    plugins: [
-        'transform-es2015-modules-commonjs',
-        // 'syntax-async-functions',
-        // 'syntax-async-generators',
-    ]
+  presets: ['env'],
+  plugins: ['transform-object-rest-spread']
 })
-
-// require('babel/polyfill')
 
 
 var fs = require('fs')
