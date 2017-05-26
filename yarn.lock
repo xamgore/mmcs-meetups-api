@@ -1508,6 +1508,13 @@ koa-rest-router@^1.0.1:
     lazy-cache "^2.0.2"
     methods "^1.1.2"
 
+koa-rewrite@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/koa-rewrite/-/koa-rewrite-2.1.0.tgz#812b35f48a860031bc862f88135e5c28318b7aa8"
+  dependencies:
+    debug "*"
+    path-to-regexp "0.0.2"
+
 koa@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/koa/-/koa-2.2.0.tgz#b055933187849d540ad8b9f731baaa4be97c652d"
@@ -1906,6 +1913,10 @@ path-match@^1.2.4:
   dependencies:
     http-errors "~1.4.0"
     path-to-regexp "^1.0.0"
+
+path-to-regexp@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.0.2.tgz#489feb060b314443a5494ab1da2efed2040ab24c"
 
 path-to-regexp@^1.0.0:
   version "1.7.0"
